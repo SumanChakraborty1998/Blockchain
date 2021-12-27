@@ -11,8 +11,8 @@ const sumanEncrypting = (message) => {
   const cipherText = nacl.box(
     nacl.util.decodeUTF8(message),
     nonce,
-    suman.publicKey,
-    prateek.secretKey,
+    prateek.publicKey,
+    suman.secretKey,
   );
 
   const messageForChannel = { cipherText, nonce };
