@@ -1,3 +1,27 @@
+let CryptoJS = require("crypto-js"); //************Symmetric Encryption
+
+let secretMessage = "Hello World";
+let nonce = "Secret Key";
+
+const doEncrypt = (message, key) => {
+  let cipherText = CryptoJS.AES.encrypt(message, key).toString();
+  return cipherText;
+};
+
+const doDecrypt = (encryptedMessage, key) => {
+  let decryptedText = CryptoJS.AES.decrypt(encryptedMessage, key).toString(
+    CryptoJS.enc.Utf8,
+  );
+  return decryptedText;
+};
+
+const encryptedMsg = doEncrypt(secretMessage, nonce);
+console.log("Symmetric Encrypted Message : ", encryptedMsg); //Showing Encrypted Message */
+
+const decryptedMsg = doDecrypt(encryptedMsg, nonce);
+console.log("Symmetric Decrypted Message : ", decryptedMsg); //Showing Decrypted and Original Message */
+
+//*****************Asymmetric Encryption
 const nacl = require("tweetnacl");
 nacl.util = require("tweetnacl-util");
 

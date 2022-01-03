@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "crypto-js": "^4.1.1",
+    "hybrid-crypto-js": "^0.2.4",
     "tweetnacl": "^1.0.3",
     "tweetnacl-util": "^0.15.1"
   }
