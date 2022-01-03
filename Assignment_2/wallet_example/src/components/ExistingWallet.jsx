@@ -1,6 +1,7 @@
 // import CryptoJs from "crypto-js";
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
+import { formatUnits } from "ethers/lib/utils";
 const CryptoJS = require("crypto-js");
 
 const JsonFormatter = {
@@ -118,6 +119,7 @@ export const ExistingWallet = () => {
     }
   };
 
+  console.log(balance);
   useEffect(() => getUserDetailsFromLocalStorage(), []);
   useEffect(() => getWalletDetails(), [keepOnEye]);
 
@@ -145,8 +147,14 @@ export const ExistingWallet = () => {
         <h3>{password}</h3>
       </div> */}
       <div>
-        <h4>Address : {walletDetails?.address}</h4>
-        <h5>Hex Balance : {balance?._hex}</h5>
+        <h4>
+          Address :
+          {walletDetails?.address ? walletDetails.address : "No Address"}
+        </h4>
+        <h5>
+          Balance :
+          {balance?._hex ? formatUnits(balance?._hex, 18) : "No Balance"}
+        </h5>
       </div>
     </div>
   );

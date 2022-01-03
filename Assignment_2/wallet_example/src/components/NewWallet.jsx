@@ -9,6 +9,8 @@ export const NewWallet = () => {
     setWallet(wallet);
   };
 
+  console.log(wallet);
+
   useEffect(handleSetWallet, []);
 
   return (
