@@ -15,8 +15,10 @@ export const NewWallet = () => {
 
   return (
     <div>
-      <h3>Creating New Wallet</h3>
-      <h4>Address : {wallet?.address}</h4>
+      <div>
+        <h3>Creating New Wallet</h3>
+        <h4>Address : {wallet?.address}</h4>
+      </div>
     </div>
   );
 };

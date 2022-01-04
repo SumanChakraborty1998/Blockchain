@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { formatUnits } from "ethers/lib/utils";
+import { SendFund } from "./SendFund";
 const CryptoJS = require("crypto-js");
 
 const JsonFormatter = {
@@ -155,6 +156,11 @@ export const ExistingWallet = () => {
           Balance :
           {balance?._hex ? formatUnits(balance?._hex, 18) : "No Balance"}
         </h5>
+      </div>
+      <div>
+        {Object.keys(walletDetails).length >= 1 && (
+          <SendFund walletDetails={walletDetails} />
+        )}
       </div>
     </div>
   );
