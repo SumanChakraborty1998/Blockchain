@@ -19,7 +19,8 @@ const encryptedMsg = doEncrypt(secretMessage, nonce);
 console.log("Symmetric Encrypted Message : ", encryptedMsg); //Showing Encrypted Message */
 
 const decryptedMsg = doDecrypt(encryptedMsg, nonce);
-console.log("Symmetric Decrypted Message : ", decryptedMsg); //Showing Decrypted and Original Message */
+console.log("Symmetric Decrypted Message : ", decryptedMsg);
+console.log("*****************************************************"); //Showing Decrypted and Original Message */
 
 //*****************Asymmetric Encryption
 const nacl = require("tweetnacl");
@@ -58,6 +59,6 @@ const prateekDecrypting = (message) => {
 };
 
 let encryptedMessage = sumanEncrypting("Hello World");
-console.log(encryptedMessage);
+console.log("Asymmetric Encrypted Message : ", encryptedMessage);
 let decryptedMessage = prateekDecrypting(encryptedMessage);
-console.log(decryptedMessage);
+console.log("Asymmetric Decrypted Message : ", decryptedMessage);
