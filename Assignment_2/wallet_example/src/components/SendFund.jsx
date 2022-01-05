@@ -1,15 +1,18 @@
 import React from "react";
 import { ethers } from "ethers";
+import { formatUnits } from "ethers/lib/utils";
 
-export const SendFund = ({ walletDetails }) => {
+export const SendFund = ({ walletDetails, balance }) => {
   const [recipient, setRecipient] = React.useState("");
   const [amount, setAmount] = React.useState("");
   const [message, setMessage] = React.useState("");
 
+  console.log(walletDetails);
+
   const handleSendFundToRecipient = async () => {
     if (recipient === "" || amount === "") {
       alert("Recipient and Amount are required");
-    } else {
+    } else if (formatUnits(balance?._hex, 18) >= amount) {
       const connection = new ethers.providers.JsonRpcProvider(
         "https://rinkeby-light.eth.linkpool.io/",
       );
@@ -33,6 +36,8 @@ export const SendFund = ({ walletDetails }) => {
         setMessage(`Transaction Sent Successfully`);
       }
       console.log(transaction);
+    } else {
+      alert("Insufficient Balance");
     }
   };
 

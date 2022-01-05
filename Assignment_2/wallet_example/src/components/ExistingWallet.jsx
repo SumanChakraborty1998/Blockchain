@@ -159,7 +159,7 @@ export const ExistingWallet = () => {
       </div>
       <div>
         {Object.keys(walletDetails).length >= 1 && (
-          <SendFund walletDetails={walletDetails} />
+          <SendFund walletDetails={walletDetails} balance={balance} />
         )}
       </div>
     </div>
