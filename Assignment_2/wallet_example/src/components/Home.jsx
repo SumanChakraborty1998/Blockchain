@@ -10,7 +10,14 @@ export const Home = () => {
   };
 
   return (
-    <div style={{ marginLeft: "40%" }}>
+    <div
+      style={{
+        margin: "auto",
+        width: "50%",
+        padding: "50px",
+        background: "lightblue",
+      }}
+    >
       <h2>Welcome To The Future</h2>
       <select onChange={(e) => handleChange(e.target.value)}>
         <option value={0}>Default</option>

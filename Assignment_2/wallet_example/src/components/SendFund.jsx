@@ -37,10 +37,17 @@ export const SendFund = ({ walletDetails }) => {
   };
 
   return (
-    <div style={{ border: "1px solid black" }}>
+    <div
+      style={{
+        width: "80%",
+        margin: "auto",
+        background: "teal",
+        padding: "50px",
+      }}
+    >
       <h2>Sending to Another Address</h2>
       <h3>
-        From <span style={{ color: "red" }}>{walletDetails?.address}</span>
+        From <span style={{ color: "lime" }}>{walletDetails?.address}</span>
       </h3>
       <input
         type="text"
@@ -56,7 +63,7 @@ export const SendFund = ({ walletDetails }) => {
       />
       <button onClick={handleSendFundToRecipient}>Send</button>
       <h3>
-        To <span style={{ color: "red" }}>{recipient}</span>
+        To <span style={{ color: "lime" }}>{recipient}</span>
       </h3>
       <h1>{message}</h1>
     </div>

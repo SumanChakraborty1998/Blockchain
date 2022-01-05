@@ -125,7 +125,7 @@ export const ExistingWallet = () => {
   useEffect(() => getWalletDetails(), [keepOnEye]);
 
   return (
-    <div>
+    <div style={{ background: "#cecece", width: "80%", paddingLeft: "50px" }}>
       <h3>Enter Existing Wallet Details</h3>
       <input
         type="text"
